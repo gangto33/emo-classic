@@ -1,0 +1,62 @@
+.main-board{
+    display: flex;
+    font-family: 'Cafe24Oneprettynight';
+}
+
+/* 메인 보드의 왼쪽 박스 ------------------------ */
+.left-box{
+    margin: 20px 0 10px 0;
+    display: flex;
+    flex-direction: column;
+    width: 40%;
+    padding-left: 40px;
+    gap: 10px;
+}
+
+.classic-img img,
+.left-text{
+    width: 90%;
+    font-size: 23px;
+}
+
+/* 메인 보드의 오른쪽 박스 ------------------------ */
+.container{
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.right-text{
+    font-size: 23px;
+}
+
+.right-text span{
+    font-family: 'iceJaram-Rg';
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.emo{
+    display: flex;
+    gap: 10px;
+}
+
+.emo input{
+    margin-top: 20px;
+    height: 20px;
+}
+
+.emo input {
+    height: 25px;
+    border: 1px solid;
+    border-radius: 5px;
+}
+
+.emo button{
+    border: 0;
+    color:white;
+}
+
+.emo img{
+    width: 60px;
+}
