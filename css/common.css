@@ -5,6 +5,13 @@
     font-style: normal;
 }
 
+@font-face {
+    font-family: 'Cafe24Oneprettynight';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_twelve@1.1/Cafe24Oneprettynight.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
 /* 초기화 reset ------------------------ */
 body,
 h1,
@@ -28,16 +35,17 @@ a{
     color:inherit;
 }
 
+/* 기본 상, 하단과 좌측 메뉴 -------------------------- */
+
 .layout-header{
     font-family: 'iceJaram-Rg';
     font-size: 50px;
     font-weight: bold;
-    height: 80px;
-    padding: 0 20px;
+    height: 60px;
     display: flex;
-    align-items: center;
+    align-items: baseline;
     justify-content: flex-start;
-    padding-top: 20px;
+    padding: 15px 0 0 40px;
 }
 
 .layout-footer{
@@ -53,26 +61,28 @@ body{
     gap:60px;
 }
 
-.emo{
-    display: flex;
-    gap: 10px;
-}
-
-.emo input{
-    margin-top: 20px;
-    height: 20px;
-
-}
-
-.emo button{
-    border: 0;
-    color:white;
-}
-
-.emo img{
-    width: 60px;
-}
-
 main{
     flex-grow: 1;
+    display: flex;
+}
+
+.menu{
+    display: flex;
+    text-align: center;
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-between;
+    font-family: 'iceJaram-Rg';
+    font-size: 40px;
+    padding:0 15px 0 20px;
+    gap: 60px;
+    border-right: 2px solid #ddd;
+    width:140px;
+    
+}
+
+.menu :first-child{
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
 }
