@@ -27,7 +27,13 @@
     gap: 10px;
 }
 .right-text{
+    padding-left: 20px;
     font-size: 23px;
+}
+
+.right-text :nth-child(2){
+    padding-top: 10px;
+    padding-left: 70px;
 }
 
 .right-text span{
