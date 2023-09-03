@@ -17,6 +17,7 @@
 .left-text{
     width: 90%;
     font-size: 23px;
+    font-weight: bold;
 }
 
 /* 메인 보드의 오른쪽 박스 ------------------------ */
@@ -29,6 +30,7 @@
 .right-text{
     padding-left: 20px;
     font-size: 23px;
+    font-weight: bold;
 }
 
 .right-text :nth-child(2){
@@ -50,19 +52,22 @@
 .emo input{
     margin-top: 20px;
     height: 20px;
+    width: 200px;
 }
 
 .emo input {
     height: 25px;
-    border: 1px solid;
+    border: 0px solid;
     border-radius: 5px;
 }
 
 .emo button{
     border: 0;
     color:white;
+    background-color: transparent;
 }
 
 .emo img{
-    width: 60px;
+    margin: 10px 5px 0px 5px;
+    width: 50px;
 }
