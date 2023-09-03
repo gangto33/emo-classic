@@ -46,7 +46,7 @@ a{
     align-items: baseline;
     justify-content: flex-start;
     padding: 15px 0 0 40px;
-    color: #341b02;
+    color: #452506;
 }
 
 .layout-footer{
@@ -58,13 +58,9 @@ a{
 body{
     display: flex;
     flex-direction: column;
+    background-repeat: round;
     min-height: 100vh;
     gap:60px;
-}
-
-body div {
-    background-image: url(./img/배경.jpg);
-    background-size: cover;
 }
 
 main{
@@ -85,6 +81,7 @@ main{
     border-right: 2px solid #ddd;
     width:140px;
     color: #341b02;
+    font-weight: bold;
 }
 
 .menu :first-child{
