@@ -19,7 +19,7 @@
             <div>
                 <div> <a href="./emo-Classic.html">emo</a> </div>
                 <div> <a href="./Situation.html">Situation</a> </div>
-                <div> <a href="">Random</a> </div>
+                <div> <a href="./Random.html">Random</a> </div>
             </div>
 
             <div> <a href="">Chahe</a> </div>
@@ -30,7 +30,7 @@
 
             <!-- 보드의 좌측 사진과 설명  -->
             <div class="left-box">
-                <div class="classic-img">
+                <div class="images">
                     <img src="./img/피아노.jpg" alt="score" />
                 </div>
                 <div class="left-text">"상황과 클래식 음악에 대한 텍스트 작성."
@@ -40,15 +40,15 @@
             <!-- gpt 질문과 답변, 버튼  -->
             <div class="container">
                 <div class="right-text">
-                    <div><span>"emo"</span>  에게 상황을 알려주세요.</div>
-                    <div>상황에 걸맞는 멋진 음악을 선사할거에요!</div>
+                    <div><span>"emo"</span>  에게 상황이나 장소를 알려주세요.</div>
+                    <div>그에 걸맞는 멋진 음악을 선사할거에요!</div>
                 </div>
 
                 <form class="emo">
                     <input type="text">
                     <button type="submit">
-                        <div class="character">
-                            <img src="./img/헤드셋.png" alt="Emo" />
+                        <div class="enter">
+                            <img src="./img/헤드셋.png" alt="enter" />
                         </div>
                     </button>
                 </form>
@@ -63,48 +63,7 @@
         Copyright 2023. Kim Gang To All rights reserved.
     </footer>
 
-    <script>
-        const $input = document.querySelector('input')
-        const $button = document.querySelector('button')
-        const $answer = document.querySelector('.answer')
-
-        const data = []
-        data.push({
-            "role": "system",
-            "content": "assistant는 상황에 맞는 클래식 음악을 5개 추천해주는 전문가이다."
-        })
-
-        const url = `https://estsoft-openai-api.jejucodingcamp.workers.dev/`
-        
-        $button.addEventListener('click', e => {
-            e.preventDefault()
-            const contents = $input.value + " 클래식 곡은 영어로 알려주세요" + " 이전 질문은 잊어주세요." + " 곡은 꼭 5개 알려주세요."
-            data.push({
-                "role": "user",
-                "content": contents
-            })
-            $input.value = ''
-
-            chatGPTAPI()
-        })
-
-        function chatGPTAPI() {
-            fetch(url, {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify(data),
-                redirect: 'follow'
-            })
-            .then(res => res.json())
-            .then(res => {
-                console.log(res)
-                // 답변 온 것을 assistant로 저장
-                $answer.innerHTML = `<p>${res.choices[0].message.content}</p>`
-            })
-        }
-    </script>
+    <script src="./js/chat.js"></script>
 </body>
 
 </html>
