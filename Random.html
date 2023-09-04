@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <link rel="stylesheet" href="./css/common.css">
+    <link rel="stylesheet" href="./css/main.css">
+</head>
+<body style="background-image:url(./img/배경.jpg)">
+    <header class="layout-header">
+        <h1><a href="./">emo Classic</a></h1>
+    </header>
+    
+    <main>
+        <!-- 좌측 메뉴  -->
+        <div class="menu">
+            <div>
+                <div> <a href="./emo-Classic.html">emo</a> </div>
+                <div> <a href="./Situation.html">Situation</a> </div>
+                <div> <a href="./Random.html">Random</a> </div>
+            </div>
+
+            <div> <a href="">Chahe</a> </div>
+        </div>
+
+        <!-- 메인 보드  -->
+        <div class="main-board">
+
+            <!-- 보드의 좌측 사진과 설명  -->
+            <div class="left-box">
+                <div class="images">
+                    <img src="./img/악보.jpg" alt="score" />
+                </div>
+                <div class="left-text">"클래식 음악의 기능 텍스트 작성."
+                </div>
+
+            </div>
+            <!-- gpt 질문과 답변, 버튼  -->
+            <div class="container">
+                <div class="right-text">
+                    <div><span>"emo"</span>  가 랜덤 클래식을 추천해드립니다.</div>
+                </div>
+
+                <form class="emo">
+                    <input type="text" class="Random-text">
+                    <button type="submit">
+                        <div class="Random-enter">
+                            <img src="./img/헤드셋.png" alt="enter" />
+                        </div>
+                    </button>
+                </form>
+                
+                <div class="answer"></div>
+            </div>
+
+        </div>
+    </main>
+
+    <footer class="layout-footer">
+        Copyright 2023. Kim Gang To All rights reserved.
+    </footer>
+
+    <script src="./js/Random.js"></script>
+</body>
+
+</html>
