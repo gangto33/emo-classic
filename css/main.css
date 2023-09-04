@@ -13,7 +13,7 @@
     gap: 10px;
 }
 
-.classic-img img,
+.images img,
 .left-text{
     width: 90%;
     font-size: 23px;
@@ -70,4 +70,15 @@
 .emo img{
     margin: 10px 5px 0px 5px;
     width: 50px;
+}
+
+.emo .Random-text {
+    z-index: -1;
+    background-color: transparent;
+    width: 125px;
+}
+
+.emo .Random-enter img{
+    margin-top: 30px;
+    width: 100px;
 }
