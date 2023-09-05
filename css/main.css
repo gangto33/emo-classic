@@ -20,9 +20,10 @@
     font-weight: bold;
 }
 
+
 /* 메인 보드의 오른쪽 박스 ------------------------ */
 .container{
-    width: 40%;
+    width: 60%;
     display: flex;
     flex-direction: column;
     gap: 10px;
@@ -72,6 +73,34 @@
     width: 50px;
 }
 
+.right-answer{
+    display: flex;
+    gap: 20px;
+}
+
+.q-and-a{
+    width: 50%;
+}
+
+.answer{
+    font-size: 18px;
+    line-height: 23px;
+}
+
+.youTube-link{
+    display: flex;
+    flex-direction: column;
+    gap: 35px;
+    padding-top: 20px;
+    font-size: 20px;
+    font-weight: bold;
+    margin-right: 20px;
+    color: #452506;
+}
+
+
+/* Random ------------------------ */
+
 .emo .Random-text {
     z-index: -1;
     background-color: transparent;
@@ -81,4 +110,11 @@
 .emo .Random-enter img{
     margin-top: 30px;
     width: 100px;
+}
+
+.randomLink{
+    font-size: 25px;
+    font-weight: bold;
+    color: #452506;
+    padding-top: 20px;
 }
