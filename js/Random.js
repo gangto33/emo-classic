@@ -1,18 +1,18 @@
 const $input = document.querySelector('input')
 const $button = document.querySelector('button')
-const $answer = document.querySelector('.answer')
+const $randomLink = document.querySelector('.randomLink')
 
 const data = []
 data.push({
     "role": "system",
-    "content": "assistant는 클래식 음악을 1개 추천해주는 전문가이다."
+    "content": "assistant는 다양한 클래식 음악을 알려준다."
 })
 
 const url = `https://estsoft-openai-api.jejucodingcamp.workers.dev/`
 
 $button.addEventListener('click', e => {
     e.preventDefault()
-    const contents = "답변은 한국어로 해주세요." + " 클래식 곡은 영어로 알려주세요" + " 이전과 다른 곡으로 추천해주세요."
+    const contents = " 영어로 알려주세요" + " 곡 앞에 1을 붙여주세요." + " 설명은 하지 마세요."
     data.push({
         "role": "user",
         "content": contents
@@ -20,6 +20,9 @@ $button.addEventListener('click', e => {
     $input.value = ''
 
     chatGPTAPI()
+
+    // 데이터 초기화
+    data.pop();
 })
 
 function chatGPTAPI() {
@@ -34,7 +37,11 @@ function chatGPTAPI() {
     .then(res => res.json())
     .then(res => {
         console.log(res)
-        // 답변 온 것을 assistant로 저장
-        $answer.innerHTML = `<p>${res.choices[0].message.content}</p>`
+
+        // 답변의 곡명 추출 후 linkList 에 저장
+        let link = `<p>${res.choices[0].message.content}</p>`.split('1.')[1].split('2.')[0]
+
+        // 유튜브 링크로 만들어 보내기
+        $randomLink.innerHTML = `<a href="https://www.youtube.com/results?search_query= ${link}" target="_blank">${link}</a>`
     })
 }
