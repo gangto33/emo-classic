@@ -42,6 +42,6 @@ function chatGPTAPI() {
         let link = `<p>${res.choices[0].message.content}</p>`.split('1.')[1].split('2.')[0]
 
         // 유튜브 링크로 만들어 보내기
-        $randomLink.innerHTML = `<a href="https://www.youtube.com/results?search_query= ${link}" target="_blank">${link}</a>`
+        $randomLink.innerHTML = `<a href="https://www.youtube.com/results?search_query= ${encodeURIComponent(link)}" target="_blank">${link}</a>`
     })
 }
