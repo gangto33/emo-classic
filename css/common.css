@@ -80,7 +80,6 @@ main{
     gap: 60px;
     border-right: 2px solid #ddd;
     min-width: 110px;
-    max-width: 110px;
     color: #341b02;
     font-weight: bold;
 }
