@@ -68,12 +68,11 @@ function chatGPTAPI() {
 
         // 링크 정제 과정
 
-        
         // 유튜브 링크로 만들어 보내기
-        $link1.innerHTML = `<a href="https://www.youtube.com/results?search_query= ${linkList[0]}" target="_blank">${linkList[0]}</a>`
-        $link2.innerHTML = `<a href="https://www.youtube.com/results?search_query= ${linkList[1]}" target="_blank">${linkList[1]}</a>`
-        $link3.innerHTML = `<a href="https://www.youtube.com/results?search_query= ${linkList[2]}" target="_blank">${linkList[2]}</a>`
-        $link4.innerHTML = `<a href="https://www.youtube.com/results?search_query= ${linkList[3]}" target="_blank">${linkList[3]}</a>`
-        $link5.innerHTML = `<a href="https://www.youtube.com/results?search_query= ${linkList[4]}" target="_blank">${linkList[4]}</a>`
+        $link1.innerHTML = `<a href="https://www.youtube.com/results?search_query= ${encodeURIComponent(linkList[0])}" target="_blank">${linkList[0]}</a>`
+        $link2.innerHTML = `<a href="https://www.youtube.com/results?search_query= ${encodeURIComponent(linkList[1])}" target="_blank">${linkList[1]}</a>`
+        $link3.innerHTML = `<a href="https://www.youtube.com/results?search_query= ${encodeURIComponent(linkList[2])}" target="_blank">${linkList[2]}</a>`
+        $link4.innerHTML = `<a href="https://www.youtube.com/results?search_query= ${encodeURIComponent(linkList[3])}" target="_blank">${linkList[3]}</a>`
+        $link5.innerHTML = `<a href="https://www.youtube.com/results?search_query= ${encodeURIComponent(linkList[4])}" target="_blank">${linkList[4]}</a>`
     })
 }
