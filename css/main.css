@@ -16,8 +16,13 @@
 .images img,
 .left-text{
     width: 90%;
-    font-size: 23px;
+    font-size: 21px;
     font-weight: bold;
+}
+
+.left-text{
+    padding-top: 20px;
+    color: #452506;
 }
 
 
@@ -36,7 +41,7 @@
 
 .right-text :nth-child(2){
     padding-top: 10px;
-    padding-left: 70px;
+    padding-left: 45px;
 }
 
 .right-text span{
@@ -62,7 +67,7 @@
     border-radius: 5px;
 }
 
-.emo button{
+.emoButton{
     border: 0;
     color:white;
     background-color: transparent;
@@ -75,7 +80,8 @@
 
 .right-answer{
     display: flex;
-    gap: 20px;
+    flex-direction: column;
+    gap: 30px;
 }
 
 .q-and-a{
@@ -85,18 +91,41 @@
 .answer{
     font-size: 18px;
     line-height: 23px;
+    width: 700px;
 }
 
 .youTube-link{
     display: flex;
     flex-direction: column;
     gap: 35px;
-    padding-top: 20px;
+    padding-top: 10px;
     font-size: 20px;
     font-weight: bold;
     margin-right: 20px;
+    width: 700px;
     color: #452506;
 }
+
+/* chachButton 생성------------------------ */
+
+.chachButton{
+    background-color: transparent;
+    color: transparent;
+    z-index: -1;
+    width: 100px;
+    height: 28px;
+    border: 0px;
+    border-radius: 10px;
+    font-family: 'Cafe24Oneprettynight';
+    font-size: 20px;
+}
+
+.getButton{
+    background-color: #794510;
+    color: white;
+    z-index: 0;
+}
+
 
 
 /* Random ------------------------ */
