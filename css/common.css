@@ -79,7 +79,7 @@ main{
     padding:0 15px 0 20px;
     gap: 60px;
     border-right: 2px solid #ddd;
-    min-width: 110px;
+    min-width:110px;
     color: #341b02;
     font-weight: bold;
 }
