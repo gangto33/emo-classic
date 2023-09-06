@@ -2,6 +2,7 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    align-items: center;
 }
 
 .ChachArea{
@@ -13,7 +14,7 @@
 }
 
 .ChachBox :last-child{
-    width: 400px;
+    width: 420px;
 }
 
 .ChachTitle{
