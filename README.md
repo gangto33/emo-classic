@@ -80,7 +80,104 @@ $link5.innerHTML = `<input type="checkbox" value='${linkList[4]}'/><a href="http
 그냥 입력 받은 값들을 모조리 넣는 것도 아니었으며, 사용자가 선별한 값을 '다른 페이지'에 사용자의 다른 어떠한 동작 없이 list로 출력되게 하는 것이었습니다.
 <br>
 <br>
-사용자가 체크한 박스의 value 값을 받아낼 수 있는 데이터 베이스를 만드는 것이 가장 중요하였으며, 이를 간단하게 해결할 수 있는 것이 
+사용자가 체크한 박스의 value 값을 받아낼 수 있는 데이터 베이스를 만드는 것이 가장 중요하였으며, 이를 간단하게 해결할 수 있는 것이 바로 localStorage 였습니다.
+<br>
+<br>
+사용자가 submit 버튼을 누른다면 체크박스를 표시했다는 가정을 할 수 있었고, 이를 통해 데이터를 얻는 함수를 버튼에 onclik 함수를 사용하여 작성했습니다.
+<br>
+<br>
+
+```js
+let checkboxes = document.querySelectorAll('input[type="checkbox"]');
+let IsCheck = []
+checkboxes.forEach(function(item) {
+    if (item.checked) {
+        IsCheck.push(item.value)
+    }
+})
+```
+<br>
+<br>
+
+만약 사용자가 계속 해서 데이터를 누적할 경우 localStorage에는 한 개의 key 당 한 개의 value만 저장될 수 있었기에 계속 덮여쓰이는 현상이 발생하여,<br>
+이를 방지하기 위해 버튼을 누를 때 마다 key 값에 1을 추가하여 여러번의 수행에도 데이터를 지켜낼 수 있었습니다.
+<br>
+<br>
+
+```js
+
+var i = 0;
+
+function getSelectedMusic() {
+
+    let checkboxes = document.querySelectorAll('input[type="checkbox"]');
+    let IsCheck = []
+    checkboxes.forEach(function(item) {
+        if (item.checked) {
+            IsCheck.push(item.value)
+        }
+    })
+
+    localStorage.setItem(i, IsCheck);
+    i++
+
+    // 체크박스 초기화.
+    checkboxes.forEach((checkbox) => {
+        checkbox.checked = false
+    });
+}
+```
+<br>
+<br>
+
+그러나 이번에는 또 다른 문제가 발생하게 되는데...<br>
+<br>
+바로 페이지 이동 시 localStorage에 적재된 데이터는 사라지지 않으나, var i = 0;이 초기화 되어 다른 페이지에 갔다가 다시 돌아왔을 때 localStorage의 key 값이 0부터 시작하여 데이터가 덮어 쓰여진다는 것이었습니다.
+<br>
+<br>
+
+하여, 페이지를 이동해도 사라지지 않는 제가 사용할 수 있는 유일한 데이터 베이스인 localStorage에 key값을 적재하여 꺼내 쓰는 방법을 생각하게 됩니다.
+
+<br>
+<br>
+
+```js
+var i = 0;
+
+function getSelectedMusic() {
+
+    // localStorage에 데이터 저장
+    if (localStorage.getItem('i')){
+        i = parseInt(localStorage.getItem('i'))
+    }
+
+    let checkboxes = document.querySelectorAll('input[type="checkbox"]');
+    let IsCheck = []
+    checkboxes.forEach(function(item) {
+        if (item.checked) {
+            IsCheck.push(item.value)
+        }
+    })
+
+    localStorage.setItem(i, IsCheck);
+    i++
+    localStorage.setItem('i', i);
+
+    // 체크박스 초기화.
+    checkboxes.forEach((checkbox) => {
+        checkbox.checked = false
+    });
+}
+```
+<br>
+<br>
+
+localStorage에 key 값을 사용한 흔적을 먼저 찾고, 없으면 0부터 시작, 만약 흔적이 존재한다면 값을 다시 가져와 사용하는 함수입니다.
+<br>
+<br>
+localStorage에는 value 값이 문자열로 저장되는 것에 유의하여 다음에 사용할 key 값을 value로 집어넣고, 다시 꺼내올 때는 parseInt() 를 사용해 숫자로 변환한 뒤 함수를 진행했습니다.
+<br>
+<br>
 
 
 
