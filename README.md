@@ -1,6 +1,6 @@
 # emo-classic
 
-# 1. 카카오 오븐을 통한 초기 구상.
+# 1. 카카오 오븐을 통한 초기 구상
 https://ovenapp.io/project/fdVoju98zML3Nsbo6xfCv9H7UZHzyHGf#A3c09
 
 ![카카오오븐](./img/카카오오븐.png)
@@ -24,7 +24,7 @@ https://ovenapp.io/project/fdVoju98zML3Nsbo6xfCv9H7UZHzyHGf#A3c09
 완성본의 화면과 매우 흡사하며, 초기 구상을 토대로 제작하였습니다.
 <br>
 <br>
-# 2. 설계.
+# 2. 설계
 카카오 오븐을 토대로 제작에 들어갔으며, 좌측에 emo(감정), Situation(상황, 장소), Random(무작위) 의 세 가지 컨텐츠와 하단에 캐시 메모리를 두었습니다.
 <br>
 <br>
@@ -40,7 +40,7 @@ https://ovenapp.io/project/fdVoju98zML3Nsbo6xfCv9H7UZHzyHGf#A3c09
 <br>
 <br>
 
-# 3. 다양한 문제들.
+# 3. 다양한 문제들
 ## 첫 번째 난관.
 
 ```js
@@ -179,7 +179,16 @@ localStorage에는 value 값이 문자열로 저장되는 것에 유의하여 �
 <br>
 <br>
 
+# 4. 결과
+![1](./img/1.png)
+![2](./img/2.png)
+![3](./img/3.png)
+![4](./img/4.png)
 
+<br>
+<br>
+구상한 대로 잘 만들어진 것 같아 뿌듯합니다.
+<br>
 
 
 
