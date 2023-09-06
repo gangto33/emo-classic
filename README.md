@@ -41,6 +41,7 @@ https://ovenapp.io/project/fdVoju98zML3Nsbo6xfCv9H7UZHzyHGf#A3c09
 <br>
 
 # 3. 다양한 문제들.
+## 첫 번째 난관.
 
 ```js
 $link1.innerHTML = `<input type="checkbox" value='${linkList[0]}'/><a href="https://www.youtube.com/results?search_query= ${linkList[0]}" target="_blank">${linkList[0]}</a>`
@@ -64,11 +65,24 @@ gpt의 답변을 받아 넣는 마지막 .then() 함수 내부에 함께 넣어 
 <br>
 <br>
 
+```js
+$link1.innerHTML = `<input type="checkbox" value='${linkList[0]}'/><a href="https://www.youtube.com/results?search_query= ${encodeURIComponent(linkList[0])}" target="_blank">${linkList[0]}</a>`
+$link2.innerHTML = `<input type="checkbox" value='${linkList[1]}'/><a href="https://www.youtube.com/results?search_query= ${encodeURIComponent(linkList[1])}" target="_blank">${linkList[1]}</a>`
+$link3.innerHTML = `<input type="checkbox" value='${linkList[2]}'/><a href="https://www.youtube.com/results?search_query= ${encodeURIComponent(linkList[2])}" target="_blank">${linkList[2]}</a>`
+$link4.innerHTML = `<input type="checkbox" value='${linkList[3]}'/><a href="https://www.youtube.com/results?search_query= ${encodeURIComponent(linkList[3])}" target="_blank">${linkList[3]}</a>`
+$link5.innerHTML = `<input type="checkbox" value='${linkList[4]}'/><a href="https://www.youtube.com/results?search_query= ${encodeURIComponent(linkList[4])}" target="_blank">${linkList[4]}</a>`
+    })
+```
+
+## 두 번째 난관.
+
+두 번째 난관은 바로 호기롭게 도전한 cache 데이터 넣기였습니다.<br>
+그냥 입력 받은 값들을 모조리 넣는 것도 아니었으며, 사용자가 선별한 값을 '다른 페이지'에 사용자의 다른 어떠한 동작 없이 list로 출력되게 하는 것이었습니다.
+<br>
+<br>
+사용자가 체크한 박스의 value 값을 받아낼 수 있는 데이터 베이스를 만드는 것이 가장 중요하였으며, 이를 간단하게 해결할 수 있는 것이 
 
 
-
-
-encodeURIComponent()
 
 
 
