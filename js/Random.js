@@ -1,7 +1,7 @@
 const $input = document.querySelector('input')
 const $button = document.querySelector('.emoButton')
 const $randomLink = document.querySelector('.randomLink')
-const $chachButton = document.querySelector('.chachButton')
+const $cacheButton = document.querySelector('.cacheButton')
 
 const data = []
 data.push({
@@ -23,7 +23,7 @@ $button.addEventListener('click', e => {
     chatGPTAPI()
 
     // 버튼 생성
-    $chachButton.classList.add("getButton")
+    $cacheButton.classList.add("getButton")
 
     // 데이터 초기화
     data.pop();
