@@ -73,7 +73,7 @@ function chatGPTAPI() {
         
         // 링크 정제 과정
         for(var i=0; i<5; i++){
-            linkList[i] = linkList[i].replace(/,/g, '').replace(/[가-힣]/g, '').replace(/[(-)]/g, '')
+            linkList[i] = linkList[i].replace(/,/g, '').replace(/[가-힣|.]/g, '').replace(/[(-)]/g, '')
         }
         
         // 유튜브 링크로 만들어 보내기
