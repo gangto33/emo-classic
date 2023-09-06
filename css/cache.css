@@ -1,11 +1,11 @@
-.chachMain{
+.cacheMain{
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
 }
 
-.ChachArea{
+.cacheArea{
     display: flex;
     gap: 20px;
     justify-content: space-between;
@@ -13,11 +13,11 @@
     margin-right: 30px;
 }
 
-.ChachBox :last-child{
+.cacheBox :last-child{
     width: 420px;
 }
 
-.ChachTitle{
+.cacheTitle{
     margin: auto;
     font-family: 'Cafe24Oneprettynight';
     font-size: 30px;
@@ -26,7 +26,7 @@
     margin-bottom: 20px;
 }
 
-.removeChach{
+.removecache{
     display: flex;
     justify-content: center;
     padding-top: 4px;
