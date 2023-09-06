@@ -10,7 +10,7 @@
 </head>
 <body style="background-image:url(./img/배경.jpg)">
     <header class="layout-header">
-        <h1><a href="./">emo Classic</a></h1>
+        <h1><a href="./index.html">emo Classic</a></h1>
     </header>
     
     <main>
@@ -22,7 +22,7 @@
                 <div> <a href="./Random.html">Random</a> </div>
             </div>
 
-            <div> <a href="">Chahe</a> </div>
+            <div> <a href="./chach.html">Chahe</a> </div>
         </div>
 
         <!-- 메인 보드  -->
@@ -33,7 +33,14 @@
                 <div class="images">
                     <img src="./img/피아노.jpg" alt="score" />
                 </div>
-                <div class="left-text">"상황과 클래식 음악에 대한 텍스트 작성."
+                <div class="left-text">
+                    음악은 좋은 곳, 좋은 사람들과의 뜻깊은 순간을 더욱 빛나게 만들어주는 힘이 있습니다.
+                    <br>
+                    <br>
+                    풍요롭고 즐거운 파티를, 또는 분위기가 한층 더 무르익는 고풍스러운 시간을 즐겨보세요!
+                    <br>
+                    <br>
+                    emo 답변 상단의 곡명을 누르면 "YouTube" 로 이동하며, Submit을 통해 원하는 Link를 보관할 수 있습니다.
                 </div>
             </div>
 
@@ -41,31 +48,35 @@
             <div class="container">
                 <div class="right-text">
                     <div><span>"emo"</span>  에게 상황이나 장소를 알려주세요.</div>
-                    <div>그에 걸맞는 멋진 음악을 선사할거에요!</div>
+                    <div>그에 걸맞는 멋진 음악을 선사할 거예요!</div>
                 </div>
 
                 <div class="right-answer">
                     <div class="q-and-a">
                         <form class="emo">
                             <input type="text">
-                            <button type="submit">
+                            <button type="submit" class="emoButton">
                                 <div class="enter">
                                     <img src="./img/헤드셋.png" alt="enter" />
                                 </div>
                             </button>
                         </form>
 
-                        <div class="answer"></div>
-                    </div>    
+                        <div class="youTube-link">
+                            <div class="link1"></div>
+                            <div class="link2"></div>
+                            <div class="link3"></div>
+                            <div class="link4"></div>
+                            <div class="link5"></div>
 
-                    <div class="youTube-link">
-                        <div class="link1"></div>
-                        <div class="link2"></div>
-                        <div class="link3"></div>
-                        <div class="link4"></div>
-                        <div class="link5"></div>
+                            <button onclick="getSelectedMusic()" class="chachButton">Submit</button>
+                        </div>
                     </div>
+                        
+                    <div class="answer"></div>
+                    
                 </div>
+            </div>
         </div>
     </main>
 
