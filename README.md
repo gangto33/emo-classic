@@ -31,7 +31,7 @@ https://ovenapp.io/project/fdVoju98zML3Nsbo6xfCv9H7UZHzyHGf#A3c09
 화면의 백그라운드에는 종이 재질의 이미지를 삽입하였으며, 종이에 글씨를 적은 것 같은 느낌을 주기 위해 필기체와 유사한 글씨를 선택하였습니다.
 <br>
 <br>
-또한, 이질적인 느낌을 줄이기 위해 글자의 색을 브라운 계열 의 부드러운 색으로 변경하였으며, 메인 컨텐츠는 눈에 더 사로잡힐 수 있도록 black으로 두었습니다.
+또한, 이질적인 느낌을 줄이기 위해 글자의 색을 브라운 계열 의 부드러운 색으로 변경하였으나, 메인 컨텐츠는 눈에 사로잡힐 수 있도록 black으로 두었습니다.
 <br>
 <br>
 기존에는 문답 형식의 간단한 텍스쳐 뿐이었으나, gpt의 곡 추천이 다양한 말들과 함께 나와 추천받은 곡이 한 눈에 보이지 않았고,<br>
@@ -180,17 +180,67 @@ localStorage에는 value 값이 문자열로 저장되는 것에 유의하여 �
 <br>
 
 ## 세 번째 난관.
-
-
-# 4. 결과
-![1](./img/1.png)
-![2](./img/2.png)
-![3](./img/3.png)
-![4](./img/4.png)
-
+이후에는 난관이 아니라 욕심이었습니다.
 <br>
 <br>
-구상한 대로 잘 만들어진 것 같아 뿌듯합니다.
+localStorage에 저장된 값들을 cache 페이지에 뿌리기만 하면 됐고,<br>
+addEventListener() 버튼 하나면 충분히 쉽게 해결될 수 있는 문제였습니다.
+<br>
+<br>
+그러나 저는 cache 창을 열면 아무런 추가적인 행동 없이 쌓인 데이터가 알아서 펼쳐져있길 바랬고, DOMContentLoaded를 찾았습니다.
+<br>
+<br>
+DOMContentLoaded. 브라우저가 html을 전부 읽고 dom tree를 완성하면 바로 실행됩니다.
+
+```js
+
+document.addEventListener('DOMContentLoaded', () => {
+
+    // localStorage 에 적재 된 emocache 가져오기
+    for(var i=0; i<20; i++){
+        if(localStorage.getItem(i)){
+            let emocache = localStorage.getItem(i).split(',')
+    
+            for(var j=0; j<emocache.length; j++){
+                if(emocache[j].length > 1){
+                    $emocache.innerHTML += `<li><a href="https://www.youtube.com/results?search_query= ${encodeURIComponent(emocache[j])}" target="_blank">${emocache[j]}</a></li>`
+                }
+            }
+        }
+        
+    }
+
+    // localStorage 에 적재 된 Situationcache 가져오기
+    for(var i=20; i<40; i++){
+        if(localStorage.getItem(i)){
+            let Situationcache = localStorage.getItem(i).split(',')
+    
+            for(var j=0; j<Situationcache.length; j++){
+                if(Situationcache[j].length > 1){
+                    $Situationcache.innerHTML += `<li><a href="https://www.youtube.com/results?search_query= ${encodeURIComponent(Situationcache[j])}" target="_blank">${Situationcache[j]}</a></li>`
+                }
+            }
+        }
+        
+    }
+
+    // localStorage 에 적재 된 Randomcache 가져오기
+    for(var i=40; i<60; i++){
+        if(localStorage.getItem(i)){
+            let Randomcache = localStorage.getItem(i).split(',')
+    
+            for(var j=0; j<Randomcache.length; j++){
+                if(Randomcache[j].length > 1){
+                    $Randomcache.innerHTML += `<li><a href="https://www.youtube.com/results?search_query= ${encodeURIComponent(Randomcache[j])}" target="_blank">${Randomcache[j]}</a></li>`
+                }
+            }
+        }
+        
+    }
+})
+
+```
+<br>
 <br>
 cache 페이지 하단의 remove 버튼은 localStorage의 모든 내용을 삭제하여 cache 페이지를 비우고, localStorage에 데이터 적재를 위한 key 값을 다시 초기화합니다.
 
@@ -200,5 +250,30 @@ function clearcache(){
     localStorage.clear()
 }
 ```
+<br>
+<br>
 
+# 4. 아쉬운 점
+무엇보다 가장 아쉬운 점은 gpt를 다루는 것이 너무 어렵다는 것입니다.
+<br>
+<br>
+완성을 한 지금도 가끔 오류가 나기도 하고, 어떨때는 대답을 회피하는 모습까지 보여 "프롬프트 엔지니어" 라는 직업이 괜히 생긴게 아니구나 하는 실감을 절실히 했습니다.
+<br>
+<br>
+또한, 정규표현식을 이번에 처음으로 사용하면서 복잡하기도 하고 아직도 잘 이해하지 못 해 링크 정제가 깔끔하게 되지 않는다는 점입니다.
+<br>
+gpt가 돌발 행동을 자주 할 수록 정규표현식을 더 깊게 공부해야 할 필요성을 더더욱 느끼게 되었습니다.
+<br>
+<br>
 
+# 5. 결과
+![1](./img/1.png)
+![2](./img/2.png)
+![3](./img/3.png)
+![4](./img/4.png)
+
+<br>
+<br>
+어설픈 부분도, 미흡한 점도 많지만 html css js를 처음 접했음에도 불구하고 제가 구상한 대로 잘 만들어진 것 같아 뿌듯합니다.
+<br>
+너무 갑작스럽게 프로젝트를 시작하면서 처음에는 준비가 되지 않았다는 두려움이 앞섰지만 하나씩 공부하고 해결해 나가면서 즐거움을 느껴 보람있었습니다.
