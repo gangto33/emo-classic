@@ -1,7 +1,7 @@
 const $input = document.querySelector('input')
 const $button = document.querySelector('.emoButton')
 const $answer = document.querySelector('.answer')
-const $chachButton = document.querySelector('.chachButton')
+const $cacheButton = document.querySelector('.cacheButton')
 
 const $link1 = document.querySelector('.link1')
 const $link2 = document.querySelector('.link2')
@@ -30,7 +30,7 @@ $button.addEventListener('click', e => {
     chatGPTAPI()
 
     // 버튼 생성
-    $chachButton.classList.add("getButton")
+    $cacheButton.classList.add("getButton")
 
     // 데이터 초기화
     data.pop();
@@ -60,19 +60,20 @@ function chatGPTAPI() {
             link = nextLink[1]
         }
 
-        let lastLink = link.split(/([가-힣])/)
+        let lastLink = link.replace(/[가-힣]/g, '')
 
         //  곡명 앞에 한글이 붙을 경우의 오류 방지
-        if (lastLink[0].length<5) {
-            link = lastLink.pop().split(/([가-힣])/)
-            linkList[4] = link[0]
-        } else {
-            linkList[4] = lastLink[0]
-        }
+        //if (lastLink[0].length<5) {
+        //    link = lastLink.pop().split(/([가-힣])/)
+        //    linkList[4] = link[0]
+        //} else {
+        //    linkList[4] = lastLink[0]
+        //}
+        linkList[4] = lastLink;
 
         // 링크 정제 과정
         for(var i=0; i<5; i++){
-            linkList[i] = linkList[i].replace(/,/g, '').replace(/[가-힣]/g, '').replace(/[(-)]/g, '')
+            linkList[i] = linkList[i].replace(/,/g, '').replace(/[가-힣]/g, '')
         }
         
         // 유튜브 링크로 만들어 보내기
