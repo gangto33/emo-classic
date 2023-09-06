@@ -179,6 +179,9 @@ localStorage에는 value 값이 문자열로 저장되는 것에 유의하여 �
 <br>
 <br>
 
+## 세 번째 난관.
+
+
 # 4. 결과
 ![1](./img/1.png)
 ![2](./img/2.png)
@@ -189,6 +192,13 @@ localStorage에는 value 값이 문자열로 저장되는 것에 유의하여 �
 <br>
 구상한 대로 잘 만들어진 것 같아 뿌듯합니다.
 <br>
+cache 페이지 하단의 remove 버튼은 localStorage의 모든 내용을 삭제하여 cache 페이지를 비우고, localStorage에 데이터 적재를 위한 key 값을 다시 초기화합니다.
 
+```js
+// 캐시 삭제
+function clearcache(){
+    localStorage.clear()
+}
+```
 
 
