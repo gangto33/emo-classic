@@ -42,5 +42,21 @@ https://ovenapp.io/project/fdVoju98zML3Nsbo6xfCv9H7UZHzyHGf#A3c09
 
 # 3. 다양한 문제들.
 
+```js
+$link1.innerHTML = `<input type="checkbox" value='${linkList[0]}'/><a href="https://www.youtube.com/results?search_query= ${linkList[0]}" target="_blank">${linkList[0]}</a>`
+$link2.innerHTML = `<input type="checkbox" value='${linkList[1]}'/><a href="https://www.youtube.com/results?search_query= ${linkList[1]}" target="_blank">${linkList[1]}</a>`
+$link3.innerHTML = `<input type="checkbox" value='${linkList[2]}'/><a href="https://www.youtube.com/results?search_query= ${linkList[2]}" target="_blank">${linkList[2]}</a>`
+$link4.innerHTML = `<input type="checkbox" value='${linkList[3]}'/><a href="https://www.youtube.com/results?search_query= ${linkList[3]}" target="_blank">${linkList[3]}</a>`
+$link5.innerHTML = `<input type="checkbox" value='${linkList[4]}'/><a href="https://www.youtube.com/results?search_query= ${linkList[4]}" target="_blank">${linkList[4]}</a>`
+```
+<br>
+gpt의 답변을 의도적으로 1.~5.의 배열 형식으로 얻을 수 있게 한 다음 split() 함수를 이용, 한 번도 사용하지 않은 정규표현식까지 어찌저찌 찾아가며 링크를 추출해 냈습니다.
+<br>
+<br>
+그 후 
+
+
+encodeURIComponent()
+
 
 
