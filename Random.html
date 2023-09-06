@@ -10,7 +10,7 @@
 </head>
 <body style="background-image:url(./img/배경.jpg)">
     <header class="layout-header">
-        <h1><a href="./">emo Classic</a></h1>
+        <h1><a href="./index.html">emo Classic</a></h1>
     </header>
     
     <main>
@@ -22,7 +22,7 @@
                 <div> <a href="./Random.html">Random</a> </div>
             </div>
 
-            <div> <a href="">Chahe</a> </div>
+            <div> <a href="./chach.html">Chahe</a> </div>
         </div>
 
         <!-- 메인 보드  -->
@@ -31,9 +31,13 @@
             <!-- 보드의 좌측 사진과 설명  -->
             <div class="left-box">
                 <div class="images">
-                    <img src="./img/악보.jpg" alt="score" />
+                    <img src="./img/오래된.jpg" alt="score" />
                 </div>
-                <div class="left-text">"클래식 음악의 기능 텍스트 작성."
+                <div class="left-text">
+                    아이콘을 누르면 "emo"가 당신을 위해 준비한 클래식 곡이 나옵니다.
+                    <br>
+                    <br>
+                    곡명을 누르면 "YouTube" 로 이동하며, Submit을 통해 Link를 보관할 수 있습니다.
                 </div>
 
             </div>
@@ -45,7 +49,7 @@
 
                 <form class="emo">
                     <input type="text" class="Random-text">
-                    <button type="submit">
+                    <button type="submit" class="emoButton">
                         <div class="Random-enter">
                             <img src="./img/헤드셋.png" alt="enter" />
                         </div>
@@ -53,6 +57,7 @@
                 </form>
                 
                 <div class="randomLink"></div>
+                <button onclick="getSelectedMusic()" class="chachButton">Submit</button>
             </div>
 
         </div>
