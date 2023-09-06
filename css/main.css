@@ -106,9 +106,9 @@
     color: #452506;
 }
 
-/* chachButton 생성------------------------ */
+/* cacheButton 생성------------------------ */
 
-.chachButton{
+.cacheButton{
     background-color: transparent;
     color: transparent;
     z-index: -1;
