@@ -1,7 +1,7 @@
 const $input = document.querySelector('input')
 const $button = document.querySelector('.emoButton')
 const $answer = document.querySelector('.answer')
-const $chachButton = document.querySelector('.chachButton')
+const $cacheButton = document.querySelector('.cacheButton')
 
 const $link1 = document.querySelector('.link1')
 const $link2 = document.querySelector('.link2')
@@ -31,7 +31,7 @@ $button.addEventListener('click', e => {
     chatGPTAPI()
 
     // 버튼 생성
-    $chachButton.classList.add("getButton")
+    $cacheButton.classList.add("getButton")
 
     // 데이터 초기화
     data.pop();
