@@ -1,6 +1,7 @@
 const $input = document.querySelector('input')
-const $button = document.querySelector('button')
+const $button = document.querySelector('.emoButton')
 const $randomLink = document.querySelector('.randomLink')
+const $chachButton = document.querySelector('.chachButton')
 
 const data = []
 data.push({
@@ -21,6 +22,9 @@ $button.addEventListener('click', e => {
 
     chatGPTAPI()
 
+    // 버튼 생성
+    $chachButton.classList.add("getButton")
+
     // 데이터 초기화
     data.pop();
 })
@@ -38,10 +42,37 @@ function chatGPTAPI() {
     .then(res => {
         console.log(res)
 
-        // 답변의 곡명 추출 후 linkList 에 저장
-        let link = `<p>${res.choices[0].message.content}</p>`.split('1.')[1].split('2.')[0]
+        // 답변의 곡명 추출 후 linkList 에 저장, replace로 링크 정제
+        let link = `<p>${res.choices[0].message.content}</p>`.split('1.')[1].split('2.')[0].replace(/,/g, '').replace(/[가-힣]/g, '')
 
         // 유튜브 링크로 만들어 보내기
-        $randomLink.innerHTML = `<a href="https://www.youtube.com/results?search_query= ${encodeURIComponent(link)}" target="_blank">${link}</a>`
+        $randomLink.innerHTML = `<input type="checkbox" value='${link}'/><a href="https://www.youtube.com/results?search_query= ${encodeURIComponent(link)}" target="_blank">${link}</a>`
     })
+}
+
+// 캐시 데이터를 localStorage에 저장
+var k = 40;
+
+function getSelectedMusic() {
+
+    // localStorage에 데이터 저장
+    if (localStorage.getItem('k')){
+        k = parseInt(localStorage.getItem('k'))
+    }
+
+    let checkboxes = document.querySelectorAll('input[type="checkbox"]');
+    let IsCheck = []
+    checkboxes.forEach(function(item) {
+        if (item.checked) {
+            IsCheck.push(item.value)
+        }
+    })
+
+    localStorage.setItem(k, IsCheck);
+    k++
+    localStorage.setItem('k', k);
+
+    checkboxes.forEach((checkbox) => {
+        checkbox.checked = false
+    });
 }
