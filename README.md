@@ -25,8 +25,10 @@ https://ovenapp.io/project/fdVoju98zML3Nsbo6xfCv9H7UZHzyHGf#A3c09
 <br>
 <br>
 # 2. 설계
-카카오 오븐을 토대로 제작에 들어갔으며, 좌측에 emo(감정), Situation(상황, 장소), Random(무작위) 의 세 가지 컨텐츠와 하단에 캐시 메모리를 두었습니다.
+카카오 오븐을 토대로 제작에 들어갔으며, CSS, HTML, JavaScript 를 사용하여 제작했습니다.
 <br>
+<br>
+구성은 좌측에 emo(감정), Situation(상황, 장소), Random(무작위) 의 세 가지 컨텐츠와 하단에 캐시 메모리를 두었습니다.
 <br>
 화면의 백그라운드에는 종이 재질의 이미지를 삽입하였으며, 종이에 글씨를 적은 것 같은 느낌을 주기 위해 필기체와 유사한 글씨를 선택하였습니다.
 <br>
