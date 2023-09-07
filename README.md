@@ -142,7 +142,7 @@ function getSelectedMusic() {
 <br>
 <br>
 
-하여, 페이지를 이동해도 사라지지 않는 제가 사용할 수 있는 유일한 데이터 베이스인 localStorage에 key값을 적재하여 꺼내 쓰는 방법을 생각하게 됩니다.
+하여, 페이지를 이동해도 사라지지 않는 localStorage에 key값을 적재하여 꺼내 쓰는 방법을 생각하게 됩니다.
 
 <br>
 <br>
