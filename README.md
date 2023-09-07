@@ -60,7 +60,7 @@ $link5.innerHTML = `<input type="checkbox" value='${linkList[4]}'/><a href="http
 gpt의 답변을 의도적으로 1.~5.의 배열 형식으로 얻을 수 있게 한 다음 split() 함수를 이용, 정규표현식을 사용해 링크를 추출해 냈습니다.
 <br>
 <br>
-미리 html 내부에 만들어 둔 ```<ul></ul>``` 에 나중에 cache 데이터를 보관하는데 필요한 checkbox를 사용하면서 곡명에 유튜브의 검색 링크를 붙여,
+미리 html 내부에 만들어 둔 <ul> 에 나중에 cache 데이터를 보관하는데 필요한 checkbox를 사용하면서 곡명에 유튜브의 검색 링크를 붙여,
 <br>
 gpt의 답변을 받아 넣는 마지막 .then() 함수 내부에 함께 넣어 질문을 받으면 같이 동작하도록 코딩하였습니다.
 <br>
